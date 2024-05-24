@@ -11,9 +11,12 @@ export default function Home() {
   const [profession, setProfession] = useState<string>("");
   function handleButtonClick() {
     if (name && age && profession) {
-      console.log("valid");
-    } else {
+      localStorage.setItem("name", name);
+      localStorage.setItem("age", age?.toString() || "");
+      localStorage.setItem("profession", profession);
       router.push("/loading");
+    } else {
+      console.log("not valid");
     }
   }
 
@@ -40,9 +43,9 @@ export default function Home() {
       </div>
       <div className="flex flex-col gap-8 w-3/5">
         <Input placeholder="Nama lengkap" value={name} onChange={handleNameChange} />
-        <Input placeholder="Umur" value={age} onChange={handleAgeChange} />
+        <Input placeholder="Umur" value={age} onChange={handleAgeChange} type="number" />
         <Input placeholder="Profesi" value={profession} onChange={handleProffesionChange} />
-        <Button className="bg-[#DA5243]" disabled={!(name && age && profession)}>
+        <Button className="bg-[#DA5243]" disabled={!(name && age && profession)} onClick={handleButtonClick}>
           START QUIZ
         </Button>
       </div>
