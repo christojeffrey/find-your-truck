@@ -31,21 +31,21 @@ export default function Home() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between py-24 bg-[#116BD9]">
+    <div className="flex min-h-screen flex-col items-center justify-between pb-8 bg-[#116BD9]">
       {/* logo */}
       <div className="w-full">
-        <div className="relative w-full h-64">
+        <div className="relative w-full h-96">
           <Image alt="logo" src="/logo.png" fill className="object-contain" />
         </div>
-        <div className="relative w-full h-56 -top-6">
+        <div className="relative w-full h-48 -top-24">
           <Image alt="icon" src="/icon.png" fill className="object-contain" />
         </div>
       </div>
-      <div className="flex flex-col gap-8 w-3/5">
-        <Input placeholder="Nama lengkap" value={name} onChange={handleNameChange} />
-        <Input placeholder="Umur" value={age} onChange={handleAgeChange} type="number" />
-        <Input placeholder="Profesi" value={profession} onChange={handleProffesionChange} />
-        <Button className="bg-[#DA5243]" disabled={!(name && age && profession)} onClick={handleButtonClick}>
+      <div className="flex flex-col gap-4 w-3/5">
+        <Input className="p-8" placeholder="Nama lengkap" value={name} onChange={handleNameChange} />
+        <Input className="p-8" placeholder="Umur" value={age} onChange={handleAgeChange} type="number" />
+        <Input className="p-8" placeholder="Profesi" value={profession} onChange={handleProffesionChange} />
+        <Button className="bg-[#DA5243] w-fit mx-auto px-8 py-6" disabled={!(name && age && profession)} onClick={handleButtonClick}>
           START QUIZ
         </Button>
       </div>

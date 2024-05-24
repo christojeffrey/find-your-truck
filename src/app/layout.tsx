@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Chivo } from "next/font/google";
+const chivo = Chivo({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Find Your Truck",
@@ -16,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} max-w-2xl mx-auto`}>{children}</body>
+      <body className={`${chivo.className} max-w-lg mx-auto`}>{children}</body>
     </html>
   );
 }
