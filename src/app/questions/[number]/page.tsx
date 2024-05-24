@@ -37,7 +37,7 @@ export default function QuestionsPage({ params }: { params: { number: string } }
     localStorage.setItem("answers", JSON.stringify(answers));
     if (parseInt(params.number) < allQuestions.length) {
       router.push(`/questions/${parseInt(params.number) + 1}`);
-    } else router.push("/result");
+    } else router.push("/trucks/1");
   }
   return (
     <div className="relative h-screen flex flex-col">
@@ -49,7 +49,7 @@ export default function QuestionsPage({ params }: { params: { number: string } }
         </div>
         {/* questions detail */}
         <div className={`flex-1 flex flex-col ${currentQuestion.location === "top" ? "justify-start" : "justify-end"}`}>
-          <div className="h-1/2 p-12 text-center">
+          <div className="h-1/2 p-6 text-center">
             <div className={`font-bold text-3xl mb-8 ${lilitaOne.className}`}>{currentQuestion.questionSentence}</div>
             <div className="flex flex-col gap-4">
               {currentQuestion.options.map((option: string, index) => {
