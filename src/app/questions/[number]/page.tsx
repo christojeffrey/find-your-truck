@@ -37,7 +37,7 @@ export default function QuestionsPage({ params }: { params: { number: string } }
     localStorage.setItem("answers", JSON.stringify(answers));
     if (parseInt(params.number) < allQuestions.length) {
       router.push(`/questions/${parseInt(params.number) + 1}`);
-    } else router.push("/trucks/1");
+    } else router.push("/loading-end");
   }
   return (
     <div className="relative h-screen flex flex-col">
