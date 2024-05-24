@@ -19,7 +19,7 @@ export default function LoadingPage() {
 
     // redirect after 5 seconds
     setTimeout(() => {
-      // router.push("/questions/1");
+      router.push("/trucks/1");
     }, 5000);
     setIsReady(true);
   }, []);
