@@ -21,7 +21,7 @@ export default function LoadingPage() {
 
     // redirect after 5 seconds
     setTimeout(() => {
-      // router.push("/questions/1");
+      router.push("/questions/1");
     }, 5000);
     setIsReady(true);
   }, []);
