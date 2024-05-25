@@ -32,7 +32,7 @@ export default function LoadingPage() {
           <Image src="/truck.png" alt="truck" fill className="object-contain" />
         </div>
 
-        <Lottie animationData={animationData} className="size-48 flex justify-center items-center" loop={true} />
+        <Lottie animationData={animationData} className="size-48 flex justify-center items-center -m-16" loop={true} />
 
         <div className="font-bold">Tahukah kamu?</div>
         <div>{funFact}</div>

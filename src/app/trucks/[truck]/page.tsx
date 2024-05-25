@@ -1,6 +1,8 @@
-const truckList = [
+export const truckList = [
   {
     name: "City Two-Wheelers (Honda Gyro)",
+    image: "/trucks/honda-gyro.png",
+    color: "D3EFA6",
     texts: [
       {
         text: "Food Truck yang cocok untukmu adalah ",
@@ -20,6 +22,9 @@ const truckList = [
   },
   {
     name: "Adventure Two-Wheelers (Honda Cub)",
+    image: "/trucks/honda-cub.png",
+    color: "D3EFA6",
+
     texts: [
       {
         text: "Food Truck yang cocok untukmu adalah ",
@@ -39,6 +44,8 @@ const truckList = [
   },
   {
     name: "City Pickup-Car (Daihatsu Hi-Max)",
+    image: "/trucks/hi-max.png",
+    color: "FEDE31",
     texts: [
       {
         text: "Food Truck yang cocok untukmu adalah ",
@@ -58,6 +65,8 @@ const truckList = [
   },
   {
     name: "City Pickup-Car (Suzuki Carry)",
+    image: "/trucks/carry.png",
+    color: "FEDE31",
     texts: [
       {
         text: "Food Truck yang cocok untukmu adalah ",
@@ -77,6 +86,8 @@ const truckList = [
   },
   {
     name: "City Van (Daihatsu Gran Max)",
+    image: "/trucks/gran-max.png",
+    color: "FFD3B8",
     texts: [
       {
         text: "Food Truck yang cocok untukmu adalah ",
@@ -96,6 +107,8 @@ const truckList = [
   },
   {
     name: "Long-Range Van (VW Transporter)",
+    image: "/trucks/vw-transporter.png",
+    color: "FFD3B8",
     texts: [
       {
         text: "Food Truck yang cocok untukmu adalah ",
@@ -115,6 +128,8 @@ const truckList = [
   },
   {
     name: "Urban Truck (Mitsubishi Fuso)",
+    image: "/trucks/fuso.png",
+    color: "FFA7D1",
     texts: [
       {
         text: "Food Truck yang cocok untukmu adalah ",
@@ -134,6 +149,8 @@ const truckList = [
   },
   {
     name: "Explorer Truck (Land Rover Series III)",
+    image: "/trucks/land-rover-series-iii.png",
+    color: "FFA7D1",
     texts: [
       {
         text: "Food Truck yang cocok untukmu adalah ",
@@ -156,6 +173,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 import { Lilita_One } from "next/font/google";
+import Link from "next/link";
 const lilitaOne = Lilita_One({ subsets: ["latin"], weight: ["400"] });
 
 export default function Truck({ params }: { params: { truck: string } }) {
@@ -165,7 +183,7 @@ export default function Truck({ params }: { params: { truck: string } }) {
       <div className="h-12"></div>
       <div className="relative h-[50vh] w-full">
         <Image src="/trucks/bg.png" fill alt="bg" className="object-cover" />
-        <Image src="/trucks/honda-gyro.png" fill alt="bg" className="pt-36 px-12 object-contain" />
+        <Image src={currentTruck.image} fill alt="bg" className="pt-36 px-12 object-contain" />
         <div className={`${lilitaOne.className} absolute mt-4 text-center h-full w-full font-bold text-5xl`}>
           <div>Hai Kery,</div>
           <div>Foodtruck mu adalah</div>
@@ -187,7 +205,9 @@ export default function Truck({ params }: { params: { truck: string } }) {
       </div>
       {/* buttons */}
       <div className="flex flex-col gap-2 justify-center items-center w-full mt-4">
-        <Button className={`${lilitaOne.className} bg-[#F06B4C] h-12`}>CEK HASIL LAINNYA{">"}</Button>
+        <Link href="/all-result">
+          <Button className={`${lilitaOne.className} bg-[#F06B4C] h-12`}>CEK HASIL LAINNYA{">"}</Button>
+        </Link>
         <div className="flex gap-2 ">
           <Button className="bg-[#116BD9] h-12 w-30 flex flex-col">
             <div>Download</div>
