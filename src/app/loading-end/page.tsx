@@ -16,7 +16,6 @@ export default function LoadingPage() {
   const [isReady, setIsReady] = useState<boolean>(false);
   useEffect(() => {
     setName(localStorage.getItem("name") || "");
-
     // redirect after 5 seconds
     setTimeout(() => {
       router.push("/trucks/" + decide());
@@ -48,7 +47,7 @@ function decide() {
   const option1: 1 | 2 | 3 = answers[1];
   const option2: 1 | 2 | 3 = answers[8];
   const option3: 1 | 2 | 3 = answers[12];
-  console.log("answers",  option1, option2, option3);
+  console.log("answers", option1, option2, option3);
 
   if (option1 === 1) {
     if (option2 === 1) {
