@@ -22,7 +22,7 @@ const allQuestions = [
   { questionSentence: "Apa yang ingin  dijual oleh Truckmu?", location: "bottom", options: ["Makanan Utama", "Minuman", "Snack"], image: "/questions/5/bg.png" },
   { questionSentence: "Jenis kuliner apa yang ingin dijual?", location: "top", options: ["Western", "Asian", "Indonesia"], image: "/questions/6/bg.png" },
   { questionSentence: "Apa preferensi kendaraan sehari-harimu?", location: "top", options: ["Mobil (panas dan hujan tetep aman)", "Motor (satset)", "Sepeda (sehat dan hemat)"], image: "/questions/7/bg.png" },
-  { questionSentence: "Jenis kendaraan yang dirasa efektif untuk dipakai berniaga", location: "top", options: ["Motor / Sepeda", "Mobil / Minivan / Losbak", "Truk"], image: "/questions/8/bg.png" },
+  { questionSentence: "Jenis kendaraan apa yang dirasa efektif untuk dipakai berniaga untukmu?", location: "top", options: ["Motor / Sepeda", "Mobil / Minivan / Losbak", "Truk"], image: "/questions/8/bg.png" },
   { questionSentence: "Berapa banyak kawan jualan barenganmu?", location: "bottom", options: ["Sendiri", "Berdua", "Lebih dari 5 orang"], image: "/questions/9/bg.png" },
   { questionSentence: "Ingin jualan di foodtruck sama siapa sih?", location: "bottom", options: ["Keluarga", "Teman", "Siapa saja asal professional"], image: "/questions/10/bg.png" },
   { questionSentence: "Kapan saja kamu akan berjualan?", location: "bottom", options: ["Setiap hari", "Weekday saja", "Jikalau ada event saja"], image: "/questions/11/bg.png" },

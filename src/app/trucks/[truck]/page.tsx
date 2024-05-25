@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Lilita_One } from "next/font/google";
 import Link from "next/link";
 import { RevealList } from "next-reveal";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import html2canvas from "html2canvas";
 import { truckList } from "@/truck";
 const lilitaOne = Lilita_One({ subsets: ["latin"], weight: ["400"] });
@@ -14,6 +14,12 @@ const lilitaOne = Lilita_One({ subsets: ["latin"], weight: ["400"] });
 export default function Truck({ params }: { params: { truck: string } }) {
   const toScreenShotRef = useRef<HTMLDivElement>(null);
   const currentTruck = truckList[parseInt(params.truck) - 1];
+  const [name, setName] = useState("");
+  useEffect(() => {
+    setName(localStorage.getItem("name") || "");
+  }, []);
+
+  if (!name) return null;
   return (
     <div ref={toScreenShotRef} className="">
       <RevealList interval={60} delay={200} className="min-h-screen flex flex-col text-[#116BD9]">
@@ -22,7 +28,7 @@ export default function Truck({ params }: { params: { truck: string } }) {
           <Image src="/trucks/bg.png" fill alt="bg" className="object-cover" />
           <Image src={currentTruck.image} fill alt="bg" className="pt-36 px-12 object-contain" />
           <div className={`${lilitaOne.className} absolute mt-4 text-center h-full w-full font-bold text-5xl`}>
-            <div>Hai Kery,</div>
+            <div>Hai {name},</div>
             <div>Foodtruck mu adalah</div>
           </div>
         </div>
