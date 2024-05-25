@@ -184,7 +184,7 @@ export default function Truck({ params }: { params: { truck: string } }) {
   const toScreenShotRef = useRef<HTMLDivElement>(null);
   const currentTruck = truckList[parseInt(params.truck) - 1];
   return (
-    <div ref={toScreenShotRef} className="border-2 border-black">
+    <div ref={toScreenShotRef} className="">
       <RevealList interval={60} delay={200} className="min-h-screen flex flex-col text-[#116BD9]">
         <div className="h-12"></div>
         <div className="relative h-[50vh] w-full">
