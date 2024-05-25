@@ -1,3 +1,4 @@
+"use client";
 export const truckList = [
   {
     name: "City Two-Wheelers (Honda Gyro)",
@@ -174,12 +175,13 @@ import Image from "next/image";
 
 import { Lilita_One } from "next/font/google";
 import Link from "next/link";
+import { RevealList } from "next-reveal";
 const lilitaOne = Lilita_One({ subsets: ["latin"], weight: ["400"] });
 
 export default function Truck({ params }: { params: { truck: string } }) {
   const currentTruck = truckList[parseInt(params.truck) - 1];
   return (
-    <div className="min-h-screen flex flex-col text-[#116BD9]">
+    <RevealList interval={60} delay={200} className="min-h-screen flex flex-col text-[#116BD9]">
       <div className="h-12"></div>
       <div className="relative h-[50vh] w-full">
         <Image src="/trucks/bg.png" fill alt="bg" className="object-cover" />
@@ -230,6 +232,6 @@ export default function Truck({ params }: { params: { truck: string } }) {
           </div>
         </div>
       </div>
-    </div>
+    </RevealList>
   );
 }

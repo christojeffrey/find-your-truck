@@ -1,9 +1,11 @@
+"use client";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 
 import { Lilita_One } from "next/font/google";
 import { truckList } from "../trucks/[truck]/page";
 import { Button } from "@/components/ui/button";
+import { RevealList } from "next-reveal";
 const lilitaOne = Lilita_One({ subsets: ["latin"], weight: ["400"] });
 export default function AllResult() {
   return (
@@ -17,7 +19,7 @@ export default function AllResult() {
           <div>Tidak puas dengan hasilnya? Berikut pilihan Food Truck lainnya:</div>
         </div>
 
-        <div className="flex flex-col gap-4 mx-4 mb-4">
+        <RevealList interval={60} delay={200} className="flex flex-col gap-4 mx-4 mb-4">
           {truckList.map((truck, index) => {
             return (
               <div key={index} className={`bg-[#${truck.color}] flex p-4 gap-2 items-center`}>
@@ -45,7 +47,7 @@ export default function AllResult() {
               </div>
             );
           })}
-        </div>
+        </RevealList>
         <Button className="bg-[#116BD9] mx-auto h-12 w-30 flex flex-col">
           <div>Konsultasi lebih</div>
           <div>lanjut</div>

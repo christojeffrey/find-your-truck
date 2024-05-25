@@ -17,6 +17,8 @@ export default function LoadingPage() {
   useEffect(() => {
     setName(localStorage.getItem("name") || "");
 
+    const answers = JSON.parse(localStorage.getItem("answers") || "{}");
+
     // redirect after 5 seconds
     setTimeout(() => {
       router.push("/trucks/1");

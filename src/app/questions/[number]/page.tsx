@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { Lilita_One, Chivo } from "next/font/google";
 const lilitaOne = Lilita_One({ subsets: ["latin"], weight: ["400"] });
 const chivo = Chivo({ subsets: ["latin"] });
+import { RevealList } from "next-reveal";
 
 const allQuestions = [
   { questionSentence: "Bagaimana kamu mengurus food truck mu?", location: "bottom", options: ["Investasi ( sebagai pemodal saja)", "Bisnis Utama", "Usaha Sampingan"], image: "/questions/1/bg.png" },
@@ -49,7 +50,7 @@ export default function QuestionsPage({ params }: { params: { number: string } }
         </div>
         {/* questions detail */}
         <div className={`flex-1 flex flex-col ${currentQuestion.location === "top" ? "justify-start" : "justify-end"}`}>
-          <div className="p-6 text-center">
+          <RevealList interval={60} delay={200} className="p-6 text-center">
             <div className={`font-bold text-3xl mb-8 ${lilitaOne.className}`}>{currentQuestion.questionSentence}</div>
             <div className="flex flex-col gap-4">
               {currentQuestion.options.map((option: string, index) => {
@@ -60,7 +61,7 @@ export default function QuestionsPage({ params }: { params: { number: string } }
                 );
               })}
             </div>
-          </div>
+          </RevealList>
         </div>
       </div>
       <Image src={currentQuestion.image} alt="bg" fill className="object-cover " />
