@@ -17,11 +17,9 @@ export default function LoadingPage() {
   useEffect(() => {
     setName(localStorage.getItem("name") || "");
 
-    const answers = JSON.parse(localStorage.getItem("answers") || "{}");
-
     // redirect after 5 seconds
     setTimeout(() => {
-      router.push("/trucks/1");
+      router.push("/trucks/" + decide());
     }, 5000);
     setIsReady(true);
   }, []);
@@ -41,4 +39,96 @@ export default function LoadingPage() {
       </div>
     </div>
   );
+}
+
+function decide() {
+  const answers = JSON.parse(localStorage.getItem("answers") || "{}");
+
+  // decision three with depth of 3. each option has 3 options 1, 2, 3
+  const option1: 1 | 2 | 3 = answers[1];
+  const option2: 1 | 2 | 3 = answers[8];
+  const option3: 1 | 2 | 3 = answers[12];
+  console.log("answers",  option1, option2, option3);
+
+  if (option1 === 1) {
+    if (option2 === 1) {
+      if (option3 === 1) {
+        return 2;
+      } else if (option3 === 2) {
+        return 2;
+      } else if (option3 === 3) {
+        return 2;
+      }
+    } else if (option2 === 2) {
+      if (option3 === 1) {
+        return 4;
+      } else if (option3 === 2) {
+        return 3;
+      } else if (option3 === 3) {
+        return 4;
+      }
+    } else if (option2 === 3) {
+      if (option3 === 1) {
+        return 8;
+      } else if (option3 === 2) {
+        return 6;
+      } else if (option3 === 3) {
+        return 8;
+      }
+    }
+  } else if (option1 === 2) {
+    if (option2 === 1) {
+      if (option3 === 1) {
+        return 2;
+      } else if (option3 === 2) {
+        return 1;
+      } else if (option3 === 3) {
+        return 2;
+      }
+    } else if (option2 === 2) {
+      if (option3 === 1) {
+        return 4;
+      } else if (option3 === 2) {
+        return 3;
+      } else if (option3 === 3) {
+        return 4;
+      }
+    } else if (option2 === 3) {
+      if (option3 === 1) {
+        return 7;
+      } else if (option3 === 2) {
+        return 4;
+      } else if (option3 === 3) {
+        return 7;
+      }
+    }
+  } else {
+    if (option2 === 1) {
+      if (option3 === 1) {
+        return 2;
+      } else if (option3 === 2) {
+        return 1;
+      } else if (option3 === 3) {
+        return 1;
+      }
+    } else if (option2 === 2) {
+      if (option3 === 1) {
+        return 3;
+      } else if (option3 === 2) {
+        return 3;
+      } else if (option3 === 3) {
+        return 3;
+      }
+    } else if (option2 === 3) {
+      if (option3 === 1) {
+        return 6;
+      } else if (option3 === 2) {
+        return 6;
+      } else if (option3 === 3) {
+        return 6;
+      }
+    }
+  }
+  // fallback
+  return 1;
 }
