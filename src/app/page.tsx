@@ -35,7 +35,7 @@ export default function Home() {
       {/* logo */}
       <div className="w-full">
         <div className="relative w-full h-96">
-          <Image alt="logo" src="/logo.png" fill className="object-contain" />
+          <Image alt="logo" src="/logo.png" fill className="object-contain object-top" />
         </div>
         <div className="relative w-full h-48 -top-24">
           <Image alt="icon" src="/icon.png" fill className="object-contain" />

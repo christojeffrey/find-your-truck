@@ -3,9 +3,9 @@ import Navbar from "@/components/navbar";
 import Image from "next/image";
 
 import { Lilita_One } from "next/font/google";
-import { truckList } from "../trucks/[truck]/page";
 import { Button } from "@/components/ui/button";
 import { RevealList } from "next-reveal";
+import { truckList } from "@/truck";
 const lilitaOne = Lilita_One({ subsets: ["latin"], weight: ["400"] });
 export default function AllResult() {
   return (
